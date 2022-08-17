@@ -1,0 +1,37 @@
+{
+    "name": "@riadh-adrani/create-recursive-app",
+    "version": "1.1.6",
+    "description": "Recursive project starter template.",
+    "bin": "./bin/cli.js",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RiadhAdrani/create-recursive-app"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --config webpack.dev.js --open",
+        "build": "webpack --config webpack.prod.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@riadh-adrani/recursive-web": "^0.7.36",
+        "dompurify": "^2.3.10",
+        "jsdom": "^20.0.0",
+        "marked": "^4.0.18",
+        "prismjs": "^1.28.0",
+        "pygmentize-bundled": "^2.3.0",
+        "remark-loader": "^5.0.0"
+    },
+    "devDependencies": {
+        "clean-webpack-plugin": "^4.0.0",
+        "file-loader": "^6.2.0",
+        "html-loader": "^3.1.0",
+        "html-webpack-plugin": "^5.5.0",
+        "terser-webpack-plugin": "^5.3.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.7.2",
+        "webpack-merge": "^5.8.0"
+    }
+}
