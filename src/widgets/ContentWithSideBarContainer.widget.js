@@ -11,6 +11,14 @@ export default (showLanding, Doc) => {
                 marginLeft: getVar("sideNavBarWidth"),
                 padding: ["10px", "20px"],
             },
+            mediaQueries: [
+                {
+                    condition: "(max-width:650px)",
+                    normal: {
+                        marginLeft: "0px",
+                    },
+                },
+            ],
         },
         children: !showLanding
             ? renderRoute()

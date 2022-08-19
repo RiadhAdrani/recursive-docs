@@ -170,5 +170,12 @@ export default () => {
                 fontFamily: getVar("snippetFontFamily"),
             },
         },
+        mediaQueries: {
+            "(max-width:650px)": {
+                ".container": {
+                    width: "95%",
+                },
+            },
+        },
     });
 };

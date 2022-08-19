@@ -24,7 +24,7 @@ export default ({
                 filter: contrast(0.9),
             },
             active: {
-                filter: contrast(1.25),
+                filter: contrast(0.8),
             },
         },
         onClick,

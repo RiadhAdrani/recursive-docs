@@ -1,5 +1,4 @@
-import { A, Column, Footer, P, Spacer, Strong, Sub } from "@riadh-adrani/recursive-web/html";
-import { getVar } from "@riadh-adrani/recursive-web/style/methods";
+import { Column } from "@riadh-adrani/recursive-web/html";
 import { renderRoute } from ".";
 import AppStyle from "./App.Style";
 import TopBarWidget from "./widgets/TopBar.widget";

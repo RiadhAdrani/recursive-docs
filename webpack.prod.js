@@ -2,8 +2,6 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
@@ -12,11 +10,10 @@ module.exports = merge(common, {
     output: {
         filename: "main.[contenthash].js",
         path: path.resolve(__dirname, "docs"),
-        publicPath: "/",
+        publicPath: "https://riadhadrani.github.io/recursive-docs/",
     },
     optimization: {
         minimizer: [
-            new CssMinimizerWebpackPlugin(),
             new TerserPlugin(),
             new HTMLWebpackPlugin({
                 template: "./public/index.html",
@@ -38,13 +35,5 @@ module.exports = merge(common, {
             }),
         ],
     },
-    plugins: [
-        new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
-        new CleanWebpackPlugin(),
-    ],
-    module: {
-        rules: [
-            { test: /\.scss$/, use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"] },
-        ],
-    },
+    plugins: [new CleanWebpackPlugin()],
 });

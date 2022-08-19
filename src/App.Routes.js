@@ -5,6 +5,8 @@ import MarkdownWidget from "./widgets/Markdown.widget";
 import NotFound404 from "./views/404.view";
 import GetStartedView from "./views/GetStarted.view";
 import getStarted from "./md/get-started";
+import WebView from "./views/Web.view";
+import webApi from "./md/web-api";
 
 export default {
     path: "/",
@@ -17,6 +19,18 @@ export default {
             component: CoreView,
             title: "Core | Recursive",
             routes: topLevelApi().map((route) => {
+                return {
+                    path: route.path,
+                    component: () => MarkdownWidget(route.file),
+                    title: route.title + " | Recursive",
+                };
+            }),
+        },
+        {
+            path: "web",
+            component: WebView,
+            title: "Web | Recursive",
+            routes: webApi().map((route) => {
                 return {
                     path: route.path,
                     component: () => MarkdownWidget(route.file),

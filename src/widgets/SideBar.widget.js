@@ -1,8 +1,10 @@
-import { Column, Fragment, H4, Hr, Summary } from "@riadh-adrani/recursive-web/html";
-import { calc, edges, getVar } from "@riadh-adrani/recursive-web/style/methods";
-import { getRoute, Link } from "..";
+import { Column, Fragment, H4, Hr } from "@riadh-adrani/recursive-web/html";
+import { calc, edges, getVar, translateX } from "@riadh-adrani/recursive-web/style/methods";
+import { getRoute, getState, Link, setState } from "..";
 
 export default (title, summary, root) => {
+    const [hide, setHide] = getState("side-bar");
+
     return Column({
         style: {
             className: "side-bar-summary",
@@ -16,7 +18,17 @@ export default (title, summary, root) => {
                 padding: ["5px", "10px"],
                 overflowY: "scroll",
                 overflowX: "hidden",
+                transitionDuration: "200ms",
+                backgroundColor: "white",
             },
+            mediaQueries: [
+                {
+                    condition: "(max-width:650px)",
+                    normal: {
+                        transform: translateX(hide ? "-200px" : "0px"),
+                    },
+                },
+            ],
         },
         children: [
             H4({ children: title }),

@@ -21,6 +21,14 @@ export default (filePath) => {
         style: {
             scoped: true,
             normal: { width: "90%", alignSelf: "center" },
+            mediaQueries: [
+                {
+                    condition: "(max-width:650px)",
+                    normal: {
+                        width: "99%",
+                    },
+                },
+            ],
             [" p"]: {
                 lineHeight: "1.75rem",
             },
