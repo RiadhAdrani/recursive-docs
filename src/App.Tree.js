@@ -1,10 +1,13 @@
-import { Column } from "@riadh-adrani/recursive-web/html";
+import { Column, H1, P, Row } from "@riadh-adrani/recursive-web/html";
 import { renderRoute } from ".";
-import AppStyle from "./App.Style";
-import TopBarWidget from "./widgets/TopBar.widget";
+import useTheme from "./controllers/useTheme";
+import style from "./style";
+import NavBar from "./widgets/NavBar";
 
 export default () => {
-    AppStyle();
+    useTheme();
+
+    style();
 
     return Column({
         style: {
@@ -14,7 +17,6 @@ export default () => {
             },
         },
         children: [
-            TopBarWidget(),
             Column({
                 style: {
                     inline: {
@@ -25,7 +27,13 @@ export default () => {
                         borderRadius: "0px",
                     },
                 },
-                children: renderRoute(),
+                children: [
+                    NavBar(),
+                    Column({
+                        style: { inline: { maxWidth: "1400px", width: "100%", margin: "auto" } },
+                        children: renderRoute(),
+                    }),
+                ],
             }),
         ],
     });

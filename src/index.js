@@ -1,4 +1,5 @@
 import { RecursiveWebApp } from "@riadh-adrani/recursive-web";
+import { useApp } from "@riadh-adrani/recursive-web/packages/components";
 import AppRoutes from "./App.Routes";
 import AppTree from "./App.Tree";
 
@@ -10,6 +11,9 @@ const App = new RecursiveWebApp({
     app: AppTree,
     route: AppRoutes,
     base: "recursive-docs",
+    onAppInit: (_app) => {
+        useApp(_app);
+    },
 });
 
 App.render();
@@ -154,15 +158,6 @@ function createComponentStyle(param) {
 }
 
 /**
- * Create a modifed `<a>` element for routing.
- * @param {import("@riadh-adrani/recursive-web/lib").AProps} props
- * @returns
- */
-function Link(props) {
-    return App.Link(props);
-}
-
-/**
  * Returns the currentl route path.
  * @returns {string}
  */
@@ -179,8 +174,11 @@ function updateTitle(title) {
     document.title = title;
 }
 
+function setEffect(key, dependencies, callback) {
+    App.setEffect(key, callback, dependencies);
+}
+
 export {
-    Link,
     goTo,
     createComponentStyle,
     setStyle,
@@ -194,4 +192,5 @@ export {
     getRoute,
     renderRoute,
     updateTitle,
+    setEffect,
 };
