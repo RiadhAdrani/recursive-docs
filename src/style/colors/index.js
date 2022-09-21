@@ -3,10 +3,18 @@ import useTheme from "../../controllers/useTheme";
 import { getVar } from "@riadh-adrani/recursive-web/style/methods";
 import colors, {
     black,
+    blueDark,
+    blueDarker,
+    blueLight,
+    blueLighter,
     dividerDark1,
     dividerDark2,
     dividerLight1,
     dividerLight2,
+    redDark,
+    redDarker,
+    redLight,
+    redLighter,
     textDark1,
     textDark2,
     textDark3,
@@ -18,7 +26,7 @@ import colors, {
     white,
 } from "./colors";
 
-const choose = (light, dark) => {
+export const choose = (light, dark) => {
     const { isDark } = useTheme();
 
     return getVar(isDark ? dark : light);
@@ -32,6 +40,10 @@ export const text_color_light_1 = "c-text-l-1";
 export const text_color_light_2 = "c-text-l-2";
 export const dividerLight = "c-divider-light";
 export const dividerDark = "c-divider-dark";
+export const red_light = "c-red--light";
+export const red_dark = "c-red--dark";
+export const blue_light = "c-blue--light";
+export const blue_dark = "c-blue--dark";
 
 export default () => {
     colors();
@@ -46,6 +58,10 @@ export default () => {
             [text_color_dark_2]: choose(textLight4, textDark4),
             [dividerLight]: choose(dividerLight2, dividerDark2),
             [dividerDark]: choose(dividerLight1, dividerDark1),
+            [red_light]: choose(redDark, redLight),
+            [red_dark]: choose(redDarker, redLighter),
+            [blue_light]: choose(blueDark, blueLight),
+            [blue_dark]: choose(blueDarker, blueLighter),
         },
     });
 };

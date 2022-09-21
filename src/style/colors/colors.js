@@ -124,7 +124,7 @@ export default () =>
             [yellowDark]: "#e0ad15",
             [yellowDarker]: "#bc9112",
             [red]: "#ed3c50",
-            [redLight]: "#f43771",
+            [redLight]: "#cf2026",
             [redLighter]: "#fd1d7c",
             [redDark]: "#cd2d3f",
             [redDarker]: "#ab2131",
