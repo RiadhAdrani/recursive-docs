@@ -39,7 +39,7 @@ export default () => {
                     Logo(),
                     Spacer({ height: "20px" }),
                     LargeTitle("Recursive", 80),
-                    LargeTitle("The Framework for dummies", 65),
+                    LargeTitle("A Framework for dummies", 65),
                     Spacer({ height: "20px" }),
                     Text("Simple, Easy and performant framework to build UI interfaces.", {
                         size: "22px",

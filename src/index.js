@@ -11,9 +11,6 @@ const App = new RecursiveWebApp({
     app: AppTree,
     route: AppRoutes,
     base: "recursive-docs",
-    onAppInit: (_app) => {
-        useApp(_app);
-    },
 });
 
 App.render();
@@ -175,7 +172,7 @@ function updateTitle(title) {
 }
 
 function setEffect(key, dependencies, callback) {
-    App.setEffect(key, callback, dependencies);
+    App.setEffect(key, dependencies, callback);
 }
 
 export {
