@@ -1,4 +1,4 @@
-import { Column, H1, P, Row } from "@riadh-adrani/recursive-web/html";
+import { Column, H1, P, Row, Spacer } from "@riadh-adrani/recursive-web/html";
 import { renderRoute } from ".";
 import useTheme from "./controllers/useTheme";
 import style from "./style";
@@ -13,28 +13,19 @@ export default () => {
         style: {
             scoped: true,
             normal: {
+                flex: 1,
                 width: "100%",
+                boxSizing: "border-box",
+                borderRadius: "0px",
             },
         },
         children: [
+            NavBar(),
             Column({
-                style: {
-                    inline: {
-                        flex: 1,
-                        width: "100%",
-                        overflowX: "hidden",
-                        boxSizing: "border-box",
-                        borderRadius: "0px",
-                    },
-                },
-                children: [
-                    NavBar(),
-                    Column({
-                        style: { inline: { maxWidth: "1400px", width: "100%", margin: "auto" } },
-                        children: renderRoute(),
-                    }),
-                ],
+                style: { inline: { maxWidth: "1400px", width: "100%", margin: "auto" } },
+                children: renderRoute(),
             }),
+            Spacer({ height: "30px" }),
         ],
     });
 };

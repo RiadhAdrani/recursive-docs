@@ -1,6 +1,9 @@
 import { Span } from "@riadh-adrani/recursive-web/html";
 
-export default (text, { size = "1em", color = "inherit", align = "left", weight = "normal" }) => {
+export default (
+    text,
+    { size = "1em", color = "inherit", align = "left", weight = "normal", lineHeight = "initial" }
+) => {
     return Span({
         children: text,
         style: {
@@ -10,6 +13,7 @@ export default (text, { size = "1em", color = "inherit", align = "left", weight 
                 color,
                 textAlign: align,
                 fontWeight: weight,
+                lineHeight,
             },
         },
     });

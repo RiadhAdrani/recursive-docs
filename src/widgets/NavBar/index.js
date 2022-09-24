@@ -9,7 +9,7 @@ import {
 } from "@riadh-adrani/recursive-web/html";
 import { getVar } from "@riadh-adrani/recursive-web/style/methods";
 import useTheme from "../../controllers/useTheme";
-import { dividerLight } from "../../style/colors";
+import { bg_color, dividerLight } from "../../style/colors";
 import logo from "../../assets/logo.png";
 import NavBarTab from "./NavBar.tab";
 import { red, redDark } from "../../style/colors/colors";
@@ -28,18 +28,21 @@ export default () => {
                 height: getVar(navBarHeight),
                 padding: [0, "30px"],
                 boxSizing: "border-box",
+                position: "sticky",
+                top: "0px",
+                backgroundColor: getVar(bg_color),
+                zIndex: 5,
             },
         },
         children: [
             Row({
+                className: "container",
                 style: {
                     scoped: true,
                     normal: {
                         alignItems: "center",
                         justifyContent: "space-between",
-                        maxWidth: "1400px",
                         flex: 1,
-                        margin: [0, "auto"],
                     },
                 },
                 children: [
@@ -101,8 +104,8 @@ export default () => {
                         },
                         children: [
                             NavBarTab({ text: "Get Started", to: "/get-started" }),
-                            NavBarTab({ text: "Core API", to: "/core" }),
-                            NavBarTab({ text: "Web API", to: "/web" }),
+                            NavBarTab({ text: "Core", to: "/core" }),
+                            NavBarTab({ text: "Web", to: "/web" }),
                             Spacer({ width: "20px" }),
                             ToggleSwitch({
                                 checked: isDark,

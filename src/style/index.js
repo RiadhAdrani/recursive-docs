@@ -51,6 +51,10 @@ export default () => {
             button: {
                 borderRadius: "5px",
             },
+            ".container": {
+                maxWidth: "1400px",
+                margin: [0, "auto"],
+            },
         },
     });
 };

@@ -3,6 +3,7 @@ import useTheme from "../../controllers/useTheme";
 import { getVar } from "@riadh-adrani/recursive-web/style/methods";
 import colors, {
     black,
+    blackSoft,
     blueDark,
     blueDarker,
     blueLight,
@@ -19,11 +20,14 @@ import colors, {
     textDark2,
     textDark3,
     textDark4,
+    textDarkCode,
     textLight1,
     textLight2,
     textLight3,
     textLight4,
+    textLightCode,
     white,
+    whiteSoft,
 } from "./colors";
 
 export const choose = (light, dark) => {
@@ -33,6 +37,7 @@ export const choose = (light, dark) => {
 };
 
 export const bg_color = "c-bg";
+export const bg_color_soft = "c-bg-soft";
 export const text_color = "c-text";
 export const text_color_dark_1 = "c-text-d-1";
 export const text_color_dark_2 = "c-text-d-2";
@@ -44,6 +49,7 @@ export const red_light = "c-red--light";
 export const red_dark = "c-red--dark";
 export const blue_light = "c-blue--light";
 export const blue_dark = "c-blue--dark";
+export const text_code = "c-text--code";
 
 export default () => {
     colors();
@@ -60,8 +66,10 @@ export default () => {
             [dividerDark]: choose(dividerLight1, dividerDark1),
             [red_light]: choose(redDark, redLight),
             [red_dark]: choose(redDarker, redLighter),
-            [blue_light]: choose(blueDark, blueLight),
-            [blue_dark]: choose(blueDarker, blueLighter),
+            [blue_light]: choose(blueDarker, blueLighter),
+            [blue_dark]: choose(blueDark, blueLight),
+            [bg_color_soft]: choose(whiteSoft, blackSoft),
+            [text_code]: choose(textLightCode, textDarkCode),
         },
     });
 };
