@@ -7,10 +7,10 @@ import {
     Link,
     Spacer,
 } from "@riadh-adrani/recursive-web/html";
-import { calc, getVar } from "@riadh-adrani/recursive-web/style/methods";
+import { calc, getVar, whenLessThan } from "@riadh-adrani/recursive-web/style/methods";
 import {
     choose,
-    dividerLight,
+    divider_light,
     red_light,
     text_color_light_1,
     text_color_light_2,
@@ -20,7 +20,6 @@ import { navBarHeight } from "../../style/dimensions";
 import { FilledButton, OutlinedButton } from "../../widgets/Button";
 import Text from "../../widgets/Text";
 import logo from "../../assets/logo.png";
-import { whenLessThan } from "../../style/media-queries";
 
 export default () => {
     const Container = CenteredColumn({
@@ -48,7 +47,7 @@ export default () => {
                         color: getVar(text_color_light_2),
                     }),
                     HorizontalLine({
-                        color: getVar(dividerLight),
+                        color: getVar(divider_light),
                         thickness: "1px",
                         width: "80vw",
                         marginVertical: "30px",

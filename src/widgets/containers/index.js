@@ -1,4 +1,5 @@
-import ApiGroupContainer from "./DocGroup.container";
+import DocGroupContainer from "./DocGroup.container";
 import DocTypeContainer from "./DocType.container";
+import MarkdownContainer from "./Markdown.container";
 
-export { ApiGroupContainer, DocTypeContainer };
+export { DocGroupContainer as ApiGroupContainer, DocTypeContainer, MarkdownContainer };

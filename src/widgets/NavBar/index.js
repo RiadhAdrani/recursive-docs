@@ -9,7 +9,7 @@ import {
 } from "@riadh-adrani/recursive-web/html";
 import { getVar } from "@riadh-adrani/recursive-web/style/methods";
 import useTheme from "../../controllers/useTheme";
-import { bg_color, dividerLight } from "../../style/colors";
+import { bg_color, divider_light } from "../../style/colors";
 import logo from "../../assets/logo.png";
 import NavBarTab from "./NavBar.tab";
 import { red, redDark } from "../../style/colors/colors";
@@ -24,14 +24,15 @@ export default () => {
         style: {
             scoped: true,
             normal: {
-                borderBottom: ["1px", "solid", getVar(dividerLight)],
+                borderBottom: ["1px", "solid", getVar(divider_light)],
                 height: getVar(navBarHeight),
+                width: "100vw",
                 padding: [0, "30px"],
                 boxSizing: "border-box",
-                position: "sticky",
+                position: "fixed",
                 top: "0px",
                 backgroundColor: getVar(bg_color),
-                zIndex: 5,
+                zIndex: 100,
             },
         },
         children: [
@@ -112,7 +113,7 @@ export default () => {
                                 onChange: toggleTheme,
                                 onBackgroundColor: getVar(redDark),
                                 radiusPx: 17,
-                                title: "Toggle color theme",
+                                title: "Theme",
                             }),
                             Spacer({ width: "20px" }),
                             NavBarIcon({
