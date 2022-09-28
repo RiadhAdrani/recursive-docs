@@ -1,16 +1,9 @@
 import { attr, getVar } from "@riadh-adrani/recursive-web/style/methods";
 import { setStyle } from "..";
-import colors, {
-    bg_color,
-    bg_color_mute,
-    bg_color_soft,
-    dividerDark,
-    divider_light,
-    text_color,
-} from "./colors";
+import colors, { bg_color, divider_light, text_color } from "./colors";
+import { notoFont } from "./fonts/fonts";
 import dimensions from "./dimensions";
 import fonts from "./fonts";
-import { notoFont } from "./fonts/fonts";
 
 export default () => {
     colors();
@@ -49,6 +42,9 @@ export default () => {
                 backgroundColor: getVar(bg_color),
                 color: getVar(text_color),
                 margin: 0,
+            },
+            body: {
+                overflowY: "scroll",
             },
             "h1,h2,h3,h4,h5,h6": {
                 margin: 0,

@@ -1,5 +1,4 @@
 import { RecursiveWebApp } from "@riadh-adrani/recursive-web";
-import { useApp } from "@riadh-adrani/recursive-web/packages/components";
 import AppRoutes from "./App.Routes";
 import AppTree from "./App.Tree";
 

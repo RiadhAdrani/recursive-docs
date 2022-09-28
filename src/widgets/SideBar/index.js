@@ -18,12 +18,15 @@ export default (groups = []) => {
                 onClick: () => {
                     setShowMenu(false);
                 },
+                onResizeGlobal: () => {
+                    if (setShowMenu) setShowMenu(false);
+                },
                 style: {
                     scoped: true,
                     normal: {
                         height: calc("100vh", "-", getVar(navBarHeight)),
                         overflowY: "scroll",
-                        padding: ["32px"],
+                        padding: ["64px", "32px"],
                         width: getVar(sideBarWidth),
                         boxSizing: "border-box",
                         backgroundColor: getVar(bg_color),

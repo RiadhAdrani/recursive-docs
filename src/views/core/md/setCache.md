@@ -1,11 +1,11 @@
-# setState
+# setCache
 
-Create a new stateful object within the `State` store.
+Create a new stateful object within the `Cache` store.
 
 -   Type
 
     ```ts
-    function setState<T>(
+    function setCache<T>(
         key: string,
         value: T,
         onInit: () => Function,
@@ -15,7 +15,7 @@ Create a new stateful object within the `State` store.
 
 -   Details
 
-    The `setState` method creates a new state entry within the `State` store. Such state is persisted as long as it is needed in the last rendering iteration, in other words, when it is no longer needed in the tree of components it is ejected from the store.
+    The `setCache` method creates a new state entry within the `Cache` store. Such state is persisted as long as the number of the stateful objects does not exceed the maximum allocated value, which is by default `1000`.
 
     The method accepts up to 4 arguments:
 
@@ -31,7 +31,7 @@ Create a new stateful object within the `State` store.
 -   Example
 
     ```ts
-    const [value, setValue, getValue, resetValue, previousValue] = setState(
+    const [value, setValue, getValue, resetValue, previousValue] = setCache(
         "value",
         0,
         async () => {

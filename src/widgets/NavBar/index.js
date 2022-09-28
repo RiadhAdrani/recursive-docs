@@ -1,6 +1,7 @@
 import { Fragment } from "@riadh-adrani/recursive-web/html";
 import NavBar from "./NavBar";
 import NavBarResponsiveMenu from "./NavBar.responsiveMenu";
+import NavBarSearch from "./NavBar.search";
 
 export const MenuContent = [
     { text: "Get Started", to: "/get-started" },
@@ -9,5 +10,5 @@ export const MenuContent = [
 ];
 
 export default () => {
-    return Fragment({ children: [NavBar(), NavBarResponsiveMenu()] });
+    return Fragment({ children: [NavBar(), NavBarResponsiveMenu(), NavBarSearch()] });
 };

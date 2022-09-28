@@ -1,6 +1,5 @@
 import {
     Column,
-    Div,
     Fragment,
     H1,
     H2,
@@ -37,7 +36,13 @@ export default () => {
                     children: [
                         H1({
                             children: "Core Reference",
-                            style: { scoped: true, normal: { padding: ["10px", 0] } },
+                            style: {
+                                scoped: true,
+                                normal: { padding: ["10px", 0] },
+                                mediaQueries: [
+                                    whenLessThan("700px", { normal: { fontSize: "1.5em" } }),
+                                ],
+                            },
                         }),
                         SearchField({
                             placeholder: "Search...",

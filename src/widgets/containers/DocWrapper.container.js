@@ -37,8 +37,9 @@ export default ({ component, filePath, sideBarGroups = [] }) => {
                     scoped: true,
                     normal: {
                         marginLeft: getVar(sideBarWidth),
-                        padding: "64px",
+                        padding: ["64px", "64px", 0, "64px"],
                         overflowX: "hidden",
+                        flex: 1,
                     },
                     mediaQueries: [
                         whenLessThan("900px", {

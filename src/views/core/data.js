@@ -1,4 +1,21 @@
 import setStateDoc from "./md/setState.md";
+import setCacheDoc from "./md/setCache.md";
+import getStateDoc from "./md/getState.md";
+import getCacheDoc from "./md/getCache.md";
+import getRefDoc from "./md/getRef.md";
+import updateOnDoc from "./md/updateOn.md";
+import setEffectDoc from "./md/setEffect.md";
+import routeDoc from "./md/route.md";
+import routeTypeDoc from "./md/route.type.md";
+import getParamsDoc from "./md/getParams.md";
+import getRouteDoc from "./md/getRoute.md";
+import goToDoc from "./md/goTo.md";
+import renderRouteDoc from "./md/renderRoute.md";
+import createElementDoc from "./md/createElement.md";
+import flagsTypeDoc from "./md/flags.type.md";
+import hooksTypeDoc from "./md/hooks.type.md";
+import recursiveElementDoc from "./md/recursiveElement.type.md";
+import stateArrayDoc from "./md/stateArray.type.md";
 
 function section({ title, path, doc, base = "/core", component }) {
     return {
@@ -16,72 +33,51 @@ function group({ name, content = [] }) {
 
 const StateMethods = [
     section({ title: "setState()", path: "/setState", doc: setStateDoc }),
-    section({ title: "setCache()", path: "/setCache" }),
-    section({ title: "getCache()", path: "/getCache" }),
-    section({ title: "getState()", path: "/getState" }),
-    section({ title: "getRef()", path: "/getRef" }),
-    section({ title: "updateOn()", path: "/updateOn" }),
+    section({ title: "setCache()", path: "/setCache", doc: setCacheDoc }),
+    section({ title: "setEffect()", path: "/setEffect", doc: setEffectDoc }),
+    section({ title: "getCache()", path: "/getCache", doc: getCacheDoc }),
+    section({ title: "getState()", path: "/getState", doc: getStateDoc }),
+    section({ title: "getRef()", path: "/getRef", doc: getRefDoc }),
+    section({ title: "updateOn()", path: "/updateOn", doc: updateOnDoc }),
 ];
 
 const RoutingMethods = [
-    section({ title: "getParams()", path: "/getParams" }),
-    section({ title: "getRoute()", path: "/getRoute" }),
-    section({ title: "goTo()", path: "/goTo" }),
-    section({ title: "renderRoute()", path: "/renderRoute" }),
+    section({ title: "route()", path: "/route", doc: routeDoc }),
+    section({ title: "getParams()", path: "/getParams", doc: getParamsDoc }),
+    section({ title: "getRoute()", path: "/getRoute", doc: getRouteDoc }),
+    section({ title: "goTo()", path: "/goTo", doc: goToDoc }),
+    section({ title: "renderRoute()", path: "/renderRoute", doc: renderRouteDoc }),
 ];
 
 const RenderingMethods = [
-    section({ title: "render()", path: "/render" }),
-    section({ title: "createElement()", path: "/createElement" }),
-];
-
-const CommonTypes = [
-    section({ title: "Flags", path: "/flags" }),
-    section({ title: "Hooks", path: "/hooks" }),
-    section({ title: "CommonProps", path: "/commonProps" }),
-];
-
-const StateTypes = [
-    section({ title: "StateArray", path: "/stateArray" }),
-    section({ title: "StateEntry", path: "/stateEntry" }),
-    section({ title: "StateStore", path: "/stateStore" }),
-];
-
-const RendererTypes = [
-    section({ title: "BaseElement", path: "/baseElement" }),
-    section({ title: "RecursiveElement", path: "/recursiveElement" }),
-];
-
-const RouterTypes = [
-    section({ title: "Route", path: "/route" }),
-    section({ title: "RouteTemplate", path: "/routeTemplate" }),
-    section({ title: "ResolvedRoute", path: "/resolvedRoute" }),
-    section({ title: "FlatRoute", path: "/flatRoute" }),
+    section({ title: "createElement()", path: "/createElement", doc: createElementDoc }),
 ];
 
 export const getMethods = () => {
     return [
-        group({ name: "State", content: StateMethods }),
-        group({ name: "Routing", content: RoutingMethods }),
-        group({ name: "Rendering", content: RenderingMethods }),
+        group({ name: "State API", content: StateMethods }),
+        group({ name: "Routing API", content: RoutingMethods }),
+        group({ name: "Rendering API", content: RenderingMethods }),
     ];
 };
 
+const CommonTypes = [
+    section({ title: "Flags", path: "/Flags", doc: flagsTypeDoc }),
+    section({ title: "Hooks", path: "/Hooks", doc: hooksTypeDoc }),
+    section({ title: "Route", path: "/Route", doc: routeTypeDoc }),
+    section({ title: "RecursiveElement", path: "/RecursiveElement", doc: recursiveElementDoc }),
+    section({ title: "StateArray", path: "/StateArray", doc: stateArrayDoc }),
+];
+
 export const getTypes = () => {
-    return [
-        group({ name: "Common Types", content: CommonTypes }),
-        group({ name: "State Types", content: StateTypes }),
-        group({ name: "Renderer Types", content: RendererTypes }),
-        group({ name: "Router Types", content: RouterTypes }),
-    ];
+    return [group({ name: "Common Types", content: CommonTypes })];
 };
 
 export const getCore = () => [
-    ...StateTypes,
-    ...RendererTypes,
     ...CommonTypes,
-    ...RouterTypes,
     ...StateMethods,
     ...RenderingMethods,
     ...RoutingMethods,
 ];
+
+export const getAll = () => [...getMethods(), ...getTypes()];

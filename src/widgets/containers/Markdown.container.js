@@ -25,7 +25,8 @@ export default (content = "") => {
                 padding: [0, "10px"],
                 color: getVar(text_color_1),
                 overflowX: "hidden",
-                fontSize: "13px",
+                fontSize: "15px",
+                flex: 1,
             },
             ["h1,h2"]: {
                 color: getVar(text_code),

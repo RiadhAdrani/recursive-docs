@@ -1,5 +1,5 @@
 import coreApi from "./views/core";
-import { getCore, getMethods, getTypes } from "./views/core/data";
+import { getAll, getCore, getMethods, getTypes } from "./views/core/data";
 import getStarted from "./views/get-started";
 import home from "./views/home";
 import webApi from "./views/web";
@@ -27,7 +27,7 @@ export default {
                     DocWrapperContainer({
                         filePath: item.doc,
                         component: item.component,
-                        sideBarGroups: getMethods(),
+                        sideBarGroups: getAll(),
                     }),
             })),
         },

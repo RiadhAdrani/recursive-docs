@@ -23,7 +23,7 @@ import { MenuContent } from ".";
 
 export default () => {
     const { isDark, toggleTheme } = useTheme();
-    const {} = useNavBar();
+    const { toggleSearchShow } = useNavBar();
 
     return Row({
         style: {
@@ -96,6 +96,7 @@ export default () => {
                                         whenLessThan("700px", { normal: { display: "none" } }),
                                     ],
                                 },
+                                onClick: toggleSearchShow,
                                 children: [
                                     Icon({ path: Serach, size: "20px" }),
                                     Spacer({ width: "7.5px" }),
