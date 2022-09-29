@@ -1,38 +1,38 @@
-# route
+# createRoute
 
 Create a route object.
 
 -   Type
 
     ```ts
-    function route(params: Route): Route;
+    function createRoute(params: Route): Route;
     ```
 
 -   Details
 
-    The `route` method is used to create a route object, to be used within a `RecursiveRouter`.
+    The `createRoute` method is used to create a route object, to be used within a `RecursiveRouter`.
 
     -   `params` : route parameters.
 
 -   Example
 
     ```ts
-    const root = route({
+    const root = createRoute({
         path: "/",
         component: HomeView,
         title: "Home",
         routes: [
-            route({
+            createRoute({
                 path: "user=:id;",
                 component: UserView,
                 title: "User",
             }),
-            route({
+            createRoute({
                 path: "docs",
                 component: DocsView,
                 title: "Documentation",
             }),
-            route({
+            createRoute({
                 path: "redirect",
                 component: () => "Redirect",
                 redirectTo: "/docs",

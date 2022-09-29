@@ -2,6 +2,7 @@ import coreApi from "./views/core";
 import { getAll, getCore, getMethods, getTypes } from "./views/core/data";
 import getStarted from "./views/get-started";
 import home from "./views/home";
+import notFound from "./views/not-found";
 import webApi from "./views/web";
 import DocWrapperContainer from "./widgets/containers/DocWrapper.container";
 
@@ -15,6 +16,7 @@ export default {
     component: home,
     title: Title("Home"),
     routes: [
+        { path: "404", component: notFound },
         { path: "get-started", component: getStarted, title: Title("Get Started") },
         {
             path: "core",

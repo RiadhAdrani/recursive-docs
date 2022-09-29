@@ -1,14 +1,31 @@
-import { Button, Column, Row, SearchField, Spacer } from "@riadh-adrani/recursive-web/html";
-import { calc, getVar, translateY, whenLessThan } from "@riadh-adrani/recursive-web/style/methods";
+import {
+    Button,
+    Column,
+    H4,
+    Link,
+    Row,
+    SearchField,
+    Spacer,
+    Span,
+} from "@riadh-adrani/recursive-web/html";
+import { calc, getVar, translateY } from "@riadh-adrani/recursive-web/style/methods";
 import { setStyle } from "../..";
-import { bg_color } from "../../style/colors";
+import {
+    bg_color,
+    bg_color_soft,
+    divider_light,
+    text_color_1,
+    text_color_2,
+} from "../../style/colors";
 import { navBarHeight } from "../../style/dimensions";
+import Text from "../Text";
 import useNavBar from "./useNavBar";
 
 export default () => {
     const { search, toggleSearchShow, setSeachQuery } = useNavBar();
 
     const expanded = search.show;
+    const result = search.result;
 
     if (expanded) {
         setStyle({
@@ -58,6 +75,10 @@ export default () => {
                     Row({
                         children: [
                             SearchField({
+                                style: {
+                                    scoped: true,
+                                    normal: { padding: ["10px", "20px"], flex: 1 },
+                                },
                                 placeholder: "Search docs",
                                 value: search.query,
                                 onInput: (e) => setSeachQuery(e.target.value),
@@ -70,7 +91,40 @@ export default () => {
                             }),
                         ],
                     }),
-                    search.query,
+                    Spacer({ height: "30px" }),
+                    Column({
+                        children: result.map((item) =>
+                            Link({
+                                href: item.path,
+                                onClick: toggleSearchShow,
+                                style: { inline: { textDecoration: "none" } },
+                                children: Column({
+                                    style: {
+                                        scoped: true,
+                                        normal: {
+                                            padding: ["10px", "20px"],
+                                            border: ["1px", "solid", getVar(divider_light)],
+                                            marginBottom: "5px",
+                                            borderRadius: "5px",
+                                            cursor: "pointer",
+                                        },
+                                        hover: {
+                                            backgroundColor: getVar(bg_color_soft),
+                                        },
+                                    },
+                                    children: [
+                                        Text(item.title, { size: "1em", weight: 600 }),
+                                        Spacer({ height: "5px" }),
+                                        Text(item.path, {
+                                            size: "0.85em",
+                                            weight: 300,
+                                            color: getVar(text_color_2),
+                                        }),
+                                    ],
+                                }),
+                            })
+                        ),
+                    }),
                 ],
             }),
         ],

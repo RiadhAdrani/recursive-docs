@@ -5,7 +5,7 @@ import getCacheDoc from "./md/getCache.md";
 import getRefDoc from "./md/getRef.md";
 import updateOnDoc from "./md/updateOn.md";
 import setEffectDoc from "./md/setEffect.md";
-import routeDoc from "./md/route.md";
+import createRouteDoc from "./md/createRoute.md";
 import routeTypeDoc from "./md/route.type.md";
 import getParamsDoc from "./md/getParams.md";
 import getRouteDoc from "./md/getRoute.md";
@@ -42,7 +42,7 @@ const StateMethods = [
 ];
 
 const RoutingMethods = [
-    section({ title: "route()", path: "/route", doc: routeDoc }),
+    section({ title: "createRoute()", path: "/createRoute", doc: createRouteDoc }),
     section({ title: "getParams()", path: "/getParams", doc: getParamsDoc }),
     section({ title: "getRoute()", path: "/getRoute", doc: getRouteDoc }),
     section({ title: "goTo()", path: "/goTo", doc: goToDoc }),
