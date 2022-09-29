@@ -154,15 +154,6 @@ function createComponentStyle(param) {
 }
 
 /**
- * Create a modifed `<a>` element for routing.
- * @param {import("@riadh-adrani/recursive-web/lib").AProps} props
- * @returns
- */
-function Link(props) {
-    return App.Link(props);
-}
-
-/**
  * Returns the currentl route path.
  * @returns {string}
  */
@@ -179,8 +170,11 @@ function updateTitle(title) {
     document.title = title;
 }
 
+function setEffect(key, dependencies, callback) {
+    App.setEffect(key, dependencies, callback);
+}
+
 export {
-    Link,
     goTo,
     createComponentStyle,
     setStyle,
@@ -194,4 +188,5 @@ export {
     getRoute,
     renderRoute,
     updateTitle,
+    setEffect,
 };
