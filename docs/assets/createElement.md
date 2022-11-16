@@ -2,30 +2,30 @@
 
 Create a basic UI element.
 
--   Type
+- Type
 
-    ```ts
-    function createElement(elementType: string, params: object): BaseElement;
-    ```
+  ```ts
+  function createElement(elementType: string, params: Record<string, any>): BaseElement;
+  ```
 
--   Details
+- Details
 
-    The `createElement` method is used to create a basic recursive element:
+  The `createElement` method is used to create a basic recursive element:
 
-    -   `elementType` : string representing the element type. e.g: In the `Web`, this value could be any `HTML` tag.
-    -   `params` : an object containing the element's options and parameters like events, attributes, hooks, flags ...etc.
+  - `elementType` : string representing the element type. e.g: In the `Web`, this value could be any `HTML` tag.
+  - `params` : an object containing the element's options and parameters like events, attributes, hooks, flags ...etc.
 
--   Throws
+- Throws
 
-    -   throws an error if the `elementType` is not of type `string`.
+  - throws an error if the `elementType` is not of type `string`.
 
--   Example
+- Example
 
-    ```ts
-    const Div = createElement("div", { children: "<div/> element" });
-    ```
+  ```ts
+  const Div = createElement("div", { children: "<div/> element" });
+  ```
 
--   See also :
+- See also :
 
-    -   [Hooks](/recursive-docs/core/Hooks)
-    -   [Flags](/recursive-docs/core/Flags)
+  - [Hooks](/recursive-docs/core/Hooks)
+  - [Flags](/recursive-docs/core/Flags)

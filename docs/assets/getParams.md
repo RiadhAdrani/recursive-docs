@@ -2,28 +2,28 @@
 
 Retrieve current route parameters.
 
--   Type
+- Type
 
-    ```ts
-    function getParams(): { [key: string]: string };
-    ```
+  ```ts
+  function getParams(): { [key: string]: string };
+  ```
 
--   Details
+- Details
 
-    The `getParams` method is used to retrieve the current route parameters as a key-value pair object.
+  The `getParams` method is used to retrieve the current route parameters as a key-value pair object.
 
--   Example 1 :
+- Example 1 :
 
-    ```ts
-    // current route : /user=:id;
+  ```ts
+  // current route : /:id
 
-    const { id } = getParams();
-    ```
+  const { id } = getParams();
+  ```
 
--   Example 2 :
+- Example 2 :
 
-    ```ts
-    // current route : /user=:id;/section=:section;
+  ```ts
+  // current route : /:id/:section
 
-    const { id, section } = getParams();
-    ```
+  const { id, section } = getParams();
+  ```
